@@ -9,6 +9,7 @@ RUN pacman-key --init && pacman-key --populate archlinux
 
 RUN pacman -Syu --noconfirm \
     base-devel \
+    zsh \
     curl \
     git \
     exa \
