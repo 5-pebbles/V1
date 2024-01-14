@@ -1,8 +1,8 @@
-# Ellie
+# V1
 ___
 
-This is my new ide its neovim in a docker container.
+A neovim development enviornment in a container.
 
 ```zsh
-alias vi="docker run -it -v $(pwd):/root/workspace 5pebbles/ellie:latest /bin/zsh"
+alias vi="docker run -it -v $(pwd):/root/workspace --privileged 5pebbles/v1:latest /bin/zsh"
 ```
