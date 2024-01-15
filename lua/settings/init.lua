@@ -19,6 +19,10 @@ vim.opt.incsearch = true
 -- Colors
 vim.opt.termguicolors = true
 
+-- Word
+vim.opt.iskeyword:append('-')
+vim.opt.iskeyword:append('_')
+
 -- Scroll
 vim.opt.scrolloff = 8
 vim.opt.signcolumn = "number"
