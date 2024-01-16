@@ -32,9 +32,25 @@ function MyStatusline()
         return "%#Terminal# %= " .. mode_highlight() .. " Terminal %#Terminal# %="
     else
         local date_time = os.date("%I:%M %p %a %b %d")
-        local line = " %<%f%( %m%)%( %r%) %= %[ 🌸 " .. date_time .. " %] %= " .. git_branch() .. " %y " .. mode_highlight() .. " %(  %P %) "
+        local line = " %<%f%( %m%)%( %r%) %= %[ 🌸 " ..
+        date_time .. " %] %= " .. git_branch() .. " %y " .. mode_highlight() .. " %(  %P %) "
         return line
     end
 end
 
 vim.opt.statusline = "%!v:lua.MyStatusline()"
+
+-- Update the Statusline at the start of each minute
+function UpdateStatusline()
+    -- Calculate the remaining time until the next minute
+    local now = os.time()
+    local _, sec = math.modf(now)
+    -- 61 not 60 or it will update before the minute changes
+    local wait_time = 61 - sec
+
+    local timer = vim.loop.new_timer()
+    timer:start(wait_time * 1000, 60000, vim.schedule_wrap(function() vim.cmd("redrawstatus") end))
+end
+
+-- Call UpdateStatusline initially to set everything up
+UpdateStatusline()

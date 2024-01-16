@@ -3,7 +3,7 @@ local M = {
     require("plugins.telescope"),
     -- Hapoon
     require("plugins.harpoon"),
-    --Leap
+    -- Leap
     require("plugins.leap"),
     -- Terminal
     require("plugins.terminal"),

@@ -19,8 +19,8 @@ local M = {
                 ["@text.title.2.markdown"] = { fg = palette.green, fmt = "bold" },
                 ["@text.title.2.marker.markdown"] = { fg = palette.green, fmt = "bold" },
                 -- 3
-                ["@text.title.3.markdown"] = { fg = palette.yellow, fmt = "bold" },
-                ["@text.title.3.marker.markdown"] = { fg = palette.yellow, fmt = "bold" },
+                ["@text.title.3.markdown"] = { fg = palette.cyan, fmt = "bold" },
+                ["@text.title.3.marker.markdown"] = { fg = palette.cyan, fmt = "bold" },
                 -- 4
                 ["@text.title.4.markdown"] = { fg = palette.blue, fmt = "bold" },
                 ["@text.title.4.marker.markdown"] = { fg = palette.blue, fmt = "bold" },
