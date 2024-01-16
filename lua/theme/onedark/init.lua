@@ -47,6 +47,7 @@ local M = {
                 ["TelescopePreviewBorder"] = { fg = palette.black, bg = palette.black },
                 -- ToggleTerm
                 ["Terminal"] = { bg = palette.black },
+                -- Nvim CMP
             },
             diagnostics = {
                 darker = true,     -- darker colors for diagnostic
@@ -61,7 +62,7 @@ local M = {
         -- New
         vim.api.nvim_set_hl(0, "StatusLineHighlightNormal", { fg = palette.black, bg = palette.green })
         vim.api.nvim_set_hl(0, "StatusLineHighlightInsert", { fg = palette.black, bg = palette.red })
-        vim.api.nvim_set_hl(0, "StatusLineHighlightVisual", { fg = palette.black, bg = palette.purple })
+        vim.api.nvim_set_hl(0, "StatusLineHighlightVisual", { fg = palette.black, bg = palette.blue })
     end,
 }
 

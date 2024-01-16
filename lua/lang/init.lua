@@ -60,14 +60,27 @@ local M = {
                     end,
                 },
 
+                preselect = cmp.PreselectMode.None,
+
                 window = {
-                    completion = cmp.config.window.bordered(),
-                    documentation = cmp.config.window.bordered(),
+                    documentation = {
+                        scrollbar = true,
+                        border = { '', '', '', ' ', ' ', ' ', ' ', ' ' },
+                        winhighlight = "Normal:NormalFloat,FloatBorder:FloatBorder",
+                        scrolloff = 2,
+                    },
+                    completion = {
+                        scrollbar = true,
+                        border = { '', '', '', ' ', '', '', '', '' },
+                        winhighlight = "Normal:NormalFloat,FloatBorder:FloatBorder",
+                        scrolloff = 2,
+                    },
                 },
 
                 mapping = {
                     ["<Tab>"] = cmp.mapping.select_next_item(),
                     ["<S-Tab>"] = cmp.mapping.select_prev_item(),
+                    ['<C-Space>'] = cmp.mapping.complete(),
                 },
 
                 formatting = {
@@ -111,22 +124,6 @@ local M = {
                     { name = "luasnip" },
                 }, {
                     { name = "buffer" },
-                }),
-            })
-
-            cmp.setup.cmdline({ "/", "?" }, {
-                mapping = cmp.mapping.preset.cmdline(),
-                sources = {
-                    { name = "buffer" },
-                },
-            })
-
-            cmp.setup.cmdline(":", {
-                mapping = cmp.mapping.preset.cmdline(),
-                sources = cmp.config.sources({
-                    { name = "path" },
-                }, {
-                    { name = "cmdline" },
                 }),
             })
         end,
