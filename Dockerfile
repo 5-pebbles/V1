@@ -22,7 +22,7 @@ EXPOSE 8080 8081 8082 8083 8084 8085
 # Rust
 RUN curl https://sh.rustup.rs -sSf | sh -s -- -y
 ENV PATH="/root/.cargo/bin:${PATH}"
-RUN cargo install bacon hurl
+RUN cargo install bacon
 
 # Act
 RUN curl -s https://raw.githubusercontent.com/nektos/act/master/install.sh | sudo bash
