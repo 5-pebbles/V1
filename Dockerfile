@@ -17,6 +17,7 @@ RUN pacman -Syu --noconfirm \
     tree-sitter-cli \
     ripgrep
 
+
 EXPOSE 8080 8081 8082 8083 8084 8085
 
 # Rust
