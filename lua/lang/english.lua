@@ -1,9 +1,5 @@
 M =	{}
 
-M.treesitters = {}
-
-M.formatters = {}
-
 M.plugins = {
     -- Spelling
     {

@@ -2,10 +2,6 @@ local M = {}
 
 M.treesitters = { "markdown_inline" }
 
-M.formatters = {}
-
-M.plugins = {}
-
 vim.api.nvim_create_autocmd("BufNew", {
     pattern = "*.md",
     once = true,
