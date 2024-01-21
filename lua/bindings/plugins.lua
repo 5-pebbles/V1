@@ -1,5 +1,8 @@
 -- Terminal
-vim.keymap.set("n", "<leader>q", function() vim.cmd("ToggleTerm") end)
+local Terminal     = require('toggleterm.terminal').Terminal
+local zsh_terminal = Terminal:new({ cmd = "ZDOTDIR=" .. vim.fn.stdpath('config') .. "/stuff zsh", close_on_exit = false })
+
+vim.keymap.set("n", "<leader>q", function() zsh_terminal:toggle() end)
 vim.cmd([[autocmd! TermOpen term://*toggleterm#* lua vim.keymap.set("t", "<esc>", "<C-\\><C-n>")]])
 
 -- Conform
@@ -12,15 +15,24 @@ vim.keymap.set({ "n", "v" }, "<leader>e", function()
 end, { desc = "Format file or range (in visual mode)" })
 
 -- Telescope
+local telescope = require('telescope.builtin')
+
 vim.keymap.set("n", "<leader>f", function()
-    vim.cmd("Telescope find_files")
+    telescope.find_files()
 end)
+
 vim.keymap.set("n", "<leader>g", function()
-    vim.cmd("Telescope git_files")
+    telescope.git_files()
 end)
+
 vim.keymap.set("n", "<leader><S-f>", function()
-    vim.cmd("Telescope live_grep")
+    telescope.live_grep()
 end)
+
+vim.keymap.set("n", "<leader>,", function()
+    telescope.find_files({ cwd = vim.fn.stdpath('config') })
+end)
+
 
 -- Harpoon
 local harpoon = require("harpoon")

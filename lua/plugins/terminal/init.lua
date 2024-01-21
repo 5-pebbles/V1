@@ -8,6 +8,7 @@ local M = {
             persist_size = false,
             direction = "vertical",
             start_in_insert = false,
+            hide_numbers = true,
 
             highlights = {
                 Normal = {
