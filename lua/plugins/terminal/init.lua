@@ -3,7 +3,7 @@ local M = {
     config = function()
         require("toggleterm").setup({
             size = function()
-                return vim.o.columns * 0.35
+                return vim.o.columns * 0.45
             end,
             persist_size = false,
             direction = "vertical",
