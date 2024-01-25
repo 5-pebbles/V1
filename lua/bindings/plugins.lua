@@ -6,7 +6,7 @@ vim.keymap.set("n", "<leader>q", function() zsh_terminal:toggle() end)
 vim.cmd([[autocmd! TermOpen term://*toggleterm#* lua vim.keymap.set("t", "<esc>", "<C-\\><C-n>")]])
 
 -- Conform
-vim.keymap.set({ "n", "v" }, "<leader>e", function()
+vim.keymap.set({ "n", "v" }, "<leader><S-w>", function()
     require("conform").format({
         lsp_fallback = true,
         async = false,
