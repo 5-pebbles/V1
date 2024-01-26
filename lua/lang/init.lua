@@ -34,13 +34,6 @@ local M = {
     {
         "neovim/nvim-lspconfig",
     },
-    -- Snips
-    {
-        "L3MON4D3/LuaSnip",
-        dependencies = {
-            "saadparwaiz1/cmp_luasnip",
-        },
-    },
     -- AutoCompletion
     {
         "hrsh7th/cmp-nvim-lsp",
@@ -53,12 +46,6 @@ local M = {
                 enabled = function()
                     return true
                 end,
-
-                snippet = {
-                    expand = function(args)
-                        require("luasnip").lsp_expand(args.body)
-                    end,
-                },
 
                 preselect = cmp.PreselectMode.None,
 
