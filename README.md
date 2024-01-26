@@ -1,17 +1,12 @@
-<h1 align="center">V1</h1>
-___
+# V1
 
-<p align="center">
 V1 is my extensible neovim configuration, designed for a smooth development experience on multiple machines.
-</p>
 
 ## Features
-___
 
 - Integrated Terminal with a custom zshrc separate from the systems.
 
 ## Plugins
-___
 
 - Plugin manager: [Lazy](https://github.com/folke/lazy.nvim)
 
@@ -37,5 +32,6 @@ ___
 
 - Themes: [OneDark](https://github.com/navarasu/onedark.nvim)
 
+___
 
-> 🌸 ʕ•ᴥ•ʔ
+> 🌸
