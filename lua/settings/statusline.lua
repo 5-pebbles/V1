@@ -25,17 +25,10 @@ function MyStatusline()
         end
     end
 
-    local win_id = vim.g.statusline_winid
-    local buf_id = vim.api.nvim_win_get_buf(win_id)
-    local buftype = vim.api.nvim_buf_get_option(buf_id, "buftype")
-    if buftype == "terminal" then
-        return "%#Terminal# %= " .. mode_highlight() .. " Terminal %#Terminal# %="
-    else
-        local date_time = os.date("%I:%M %p %a %b %d")
-        local line = " %<%f%( %m%)%( %r%) %= %[ 🌸 " ..
+    local date_time = os.date("%I:%M %p %a %b %d")
+    local line = " %<%f%( %m%)%( %r%) %= %[ 🌸 " ..
         date_time .. " %] %= " .. git_branch() .. " %y " .. mode_highlight() .. " %(  %P %) "
-        return line
-    end
+    return line
 end
 
 vim.opt.statusline = "%!v:lua.MyStatusline()"

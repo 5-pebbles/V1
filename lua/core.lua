@@ -33,5 +33,5 @@ require("lazy").setup(M)
 
 -- Settings
 require("settings")
-require("bindings")
+require("mapping")
 require("autocmds")
