@@ -1,2 +1,2 @@
-require("mapping.general")
-require("mapping.plugins")
+require("mappings.general")
+require("mappings.plugins")
