@@ -14,7 +14,7 @@ end
 vim.cmd([[autocmd! TermOpen term://*toggleterm#* lua ApplyTerminalMapings()]])
 
 -- Conform
-vim.keymap.set({ "n", "v" }, "<leader><S-w>", function()
+vim.keymap.set({ "n", "v" }, "<leader>w", function()
     require("conform").format({
         lsp_fallback = true,
         async = false,

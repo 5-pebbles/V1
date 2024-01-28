@@ -2,7 +2,7 @@
 vim.g.mapleader = " "
 
 -- Write
-vim.keymap.set("n", "<leader>w", vim.cmd.w)
+vim.keymap.set("n", "<leader><S-w>", vim.cmd.w)
 
 -- Clipboard
 vim.keymap.set("v", "<leader>y", '"+y')
