@@ -1,9 +1,16 @@
-# Its hard to use neovim in neovim the commands overlap
-EDITOR=nano
+# .zshrc
+EDITOR=nvim
 
 PROMPT='%1{🌸%}[%(!.%F{red}.%F{green)%~%f]%(!.#.$) '
 
-alias c='cd'
-alias l='ls -a'
-alias vi='nvim'
-alias q='exit'
+lf () {
+    # `command` is needed in case this is aliased to `lf`
+    cd "$(command lf -print-last-dir "$@")"
+}
+
+alias 'l'='ls -A'
+alias 'c'='cd'
+alias 'm'='mv'
+alias 'r'='rm -r'
+alias 'v'="$EDITOR"
+alias 'q'='exit'
