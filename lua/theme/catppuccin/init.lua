@@ -10,7 +10,22 @@ M.styles = {
     {
         "Catppuccin",
         config = function()
-            vim.cmd.colorscheme("catppuccin-mocha")
+            require("catppuccin").setup({
+                integrations = {
+                    telescope = {
+                        enabled = true,
+                        style = "nvchad",
+                    },
+                },
+                custom_highlights = function(colors)
+                    return {
+                        FloatTitle = { link = "TelescopeResultsTitle" },
+                        NormalFloat = { link = "TelescopeResultsNormal" },
+                        FloatBorder = { link = "TelescopeResultsBorder" },
+                    }
+                end,
+            })
+            vim.cmd.colorscheme("catppuccin-frappe")
         end,
     }
 }
