@@ -8,12 +8,12 @@ local function merge(plugins)
     end
 end
 
--- Theme
-merge(require("theme"))
--- Lang
-merge(require("lang"))
 -- Other plugins
 merge(require("plugins"))
+-- Lang
+merge(require("lang"))
+-- Theme
+merge(require("theme"))
 
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
@@ -35,3 +35,6 @@ require("lazy").setup(M)
 require("settings")
 require("mappings")
 require("autocmds")
+
+-- Set Theme
+vim.cmd.ThemeUpdate()

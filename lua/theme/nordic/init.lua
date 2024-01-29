@@ -1,4 +1,6 @@
-local M = {
+local M = {}
+
+M.plugin = {
     "AlexvZyl/nordic.nvim",
     name = "nordic",
     lazy = false,
@@ -6,7 +8,7 @@ local M = {
     config = function()
         local palette = require("nordic.colors")
         local main_highlight = palette.green.base
-        require("nordic").load({
+        require("nordic").setup({
             reduced_blue = false,
             -- swap_backgrounds = true,
             cursorline = {
@@ -31,6 +33,15 @@ local M = {
             },
         })
     end,
+}
+
+M.styles = {
+    {
+        "Nordic",
+        config = function()
+            require("nordic").load()
+        end,
+    }
 }
 
 return M

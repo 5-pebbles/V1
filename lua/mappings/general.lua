@@ -32,3 +32,6 @@ vim.api.nvim_create_user_command("DiagnosticsToggle", function()
     end
 end, {})
 vim.keymap.set("n", "<leader>p", vim.cmd.DiagnosticsToggle)
+
+-- Themes
+vim.keymap.set("n", "<leader>.", vim.cmd.ThemeSelector)
