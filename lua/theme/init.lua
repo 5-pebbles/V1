@@ -40,6 +40,7 @@ end
 merge(require("theme.onedark"))
 merge(require("theme.catppuccin"))
 merge(require("theme.nordic"))
+merge(require("theme.gruvbox"))
 
 table.sort(T, function(a, b) return a[1] < b[1] end)
 
