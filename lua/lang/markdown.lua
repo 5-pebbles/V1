@@ -1,5 +1,7 @@
 local M = {}
 
+-- You can find headline in the theme plugins
+
 M.treesitters = { "markdown_inline" }
 
 vim.api.nvim_create_autocmd("BufNew", {

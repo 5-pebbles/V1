@@ -31,4 +31,3 @@ V1 is a extensible neovim configuration, designed for a smooth development exper
 - Custom UI: [Nui](https://github.com/MunifTanjim/nui.nvim)
 
 - Themes: [OneDark](https://github.com/navarasu/onedark.nvim)
-

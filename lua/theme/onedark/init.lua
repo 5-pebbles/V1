@@ -1,3 +1,4 @@
+local blend = require("theme.utils").blend
 local M = {}
 
 M.plugin = {
@@ -9,6 +10,10 @@ M.plugin = {
 local function set_style(style)
     local palette = require("onedark.palette")[style]
 
+    local headline = function(color)
+        return { fg = color, bg = blend(color, palette.bg0, 0.07), fmt = "bold" }
+    end
+
     require("onedark").setup({
         style = style,
         colors = {
@@ -18,20 +23,15 @@ local function set_style(style)
             ["StatusLine"] = { fg = palette.gray1, bg = palette.black },
             -- Markdown headers
             -- 1
-            ["@text.title.1.markdown"] = { fg = palette.red, fmt = "bold" },
-            ["@text.title.1.marker.markdown"] = { fg = palette.red, fmt = "bold" },
+            ["Headline1"] = headline(palette.red),
             -- 2
-            ["@text.title.2.markdown"] = { fg = palette.green, fmt = "bold" },
-            ["@text.title.2.marker.markdown"] = { fg = palette.green, fmt = "bold" },
+            ["Headline2"] = headline(palette.green),
             -- 3
-            ["@text.title.3.markdown"] = { fg = palette.cyan, fmt = "bold" },
-            ["@text.title.3.marker.markdown"] = { fg = palette.cyan, fmt = "bold" },
+            ["Headline3"] = headline(palette.cyan),
             -- 4
-            ["@text.title.4.markdown"] = { fg = palette.blue, fmt = "bold" },
-            ["@text.title.4.marker.markdown"] = { fg = palette.blue, fmt = "bold" },
+            ["Headline4"] = headline(palette.blue),
             -- 5
-            ["@text.title.5.markdown"] = { fg = palette.purple, fmt = "bold" },
-            ["@text.title.5.marker.markdown"] = { fg = palette.purple, fmt = "bold" },
+            ["Headline5"] = headline(palette.purple),
             -- Float
             ["FloatTitle"] = { fg = palette.black, bg = palette.green },
             ["NormalFloat"] = { bg = palette.black },

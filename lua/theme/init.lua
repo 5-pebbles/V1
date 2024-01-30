@@ -15,6 +15,29 @@ local M = {
             }
         }
     },
+    -- Headlines
+    {
+        "5-pebbles/headlines.nvim",
+        dependencies = "nvim-treesitter/nvim-treesitter",
+        opts = {
+            markdown = {
+                headline_highlights = {
+                    "Headline1",
+                    "Headline2",
+                    "Headline3",
+                    "Headline4",
+                    "Headline5",
+                },
+                codeblock_highlight = "CodeBlock",
+                dash_highlight = "Dash",
+                dash_string = "_",
+                quote_highlight = "Quote",
+                fat_headlines = true,
+                fat_headline_upper_string = "▃",
+                fat_headline_lower_string = "▀",
+            },
+        },
+    },
 }
 
 local T = {}
@@ -42,6 +65,7 @@ merge(require("theme.catppuccin"))
 merge(require("theme.nordic"))
 merge(require("theme.gruvbox"))
 merge(require("theme.bluloco"))
+-- merge(require("theme.nord"))
 
 table.sort(T, function(a, b) return a[1] < b[1] end)
 
@@ -85,6 +109,9 @@ function ThemeCycle(increment)
 end
 
 function ThemeSelector()
+    local filetype = vim.bo.filetype
+    local window_id = vim.api.nvim_get_current_win()
+
     local Popup = require("nui.popup")
 
     local theme_width = 60 / #T
@@ -173,7 +200,16 @@ function ThemeSelector()
         ThemeCycle(-1)
         themes:set_active()
     end)
-    header:map("n", "<CR>", function() ThemeUpdate() end)
+    header:map("n", "<CR>", function()
+        ThemeUpdate()
+        if filetype == "markdown" then
+            local current_id = vim.api.nvim_get_current_win()
+
+            vim.api.nvim_set_current_win(window_id)
+            require('headlines').refresh()
+            vim.api.nvim_set_current_win(current_id)
+        end
+    end)
     header:map("n", "<esc>", function()
         header:unmount()
         themes:unmount()

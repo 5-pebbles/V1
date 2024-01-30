@@ -1,3 +1,4 @@
+local blend = require("theme.utils").blend
 local M = {}
 
 M.plugin = {
@@ -7,7 +8,12 @@ M.plugin = {
     priority = 1000,
     config = function()
         local palette = require("nordic.colors")
-        local main_highlight = palette.green.base
+        local main_highlight = palette.orange.base
+
+        local headline = function(color)
+            return { fg = color, bg = blend(color, palette.gray0, 0.07), bold = true }
+        end
+
         require("nordic").setup({
             reduced_blue = false,
             -- swap_backgrounds = true,
@@ -16,6 +22,12 @@ M.plugin = {
                 blend = 0.9,
             },
             override = {
+                -- Headlines
+                Headline1 = headline(palette.orange.base),
+                Headline2 = headline(palette.red.base),
+                Headline3 = headline(palette.green.base),
+                Headline4 = headline(palette.cyan.base),
+                Headline5 = headline(palette.magenta.base),
                 -- Line Numbers
                 LineNr = { fg = main_highlight, bold = true },
                 LineNrAbove = { fg = palette.gray2, bold = false },
