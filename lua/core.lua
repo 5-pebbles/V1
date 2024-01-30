@@ -37,4 +37,4 @@ require("mappings")
 require("autocmds")
 
 -- Set Theme
-vim.cmd.ThemeUpdate()
+require("theme.selector"):update()
