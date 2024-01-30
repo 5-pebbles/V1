@@ -2,7 +2,7 @@ local theme_path = vim.fn.stdpath("data") .. "/theme/current"
 
 M = {}
 
-M.current_theme = 1
+M.current_theme = nil
 M.selector_themes = {}
 
 function M:update()
