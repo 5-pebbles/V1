@@ -21,14 +21,5 @@ vim.api.nvim_set_keymap('n', '<C-j>', '<C-w>j', { noremap = true })
 vim.api.nvim_set_keymap('n', '<C-k>', '<C-w>k', { noremap = true })
 vim.api.nvim_set_keymap('n', '<C-l>', '<C-w>l', { noremap = true })
 
-
 -- Toggle Diagnostics
-vim.api.nvim_create_user_command("DiagnosticsToggle", function()
-    local current_value = vim.diagnostic.is_disabled()
-    if current_value then
-        vim.diagnostic.enable()
-    else
-        vim.diagnostic.disable()
-    end
-end, {})
 vim.keymap.set("n", "<leader>p", vim.cmd.DiagnosticsToggle)
