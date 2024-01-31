@@ -7,6 +7,8 @@ local M = {
     require("plugins.leap"),
     -- Terminal
     require("plugins.terminal"),
+    -- Cmdline
+    require("plugins.cmdline")
 }
 
 return M
