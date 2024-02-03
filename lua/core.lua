@@ -38,3 +38,8 @@ require("autocmds")
 
 -- Set Theme
 require("theme.selector"):update()
+
+
+-- Spotify Tokens
+-- CLIENT_ID = "d59290fe7c1645528981d230dfc2f2d4"
+-- CLIENT_SECRET = "c222fb5b2d4949d6a79f5fe3ed7f7db5"
