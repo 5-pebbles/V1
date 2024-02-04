@@ -19,9 +19,15 @@ M.styles = {
                 },
                 custom_highlights = function(colors)
                     return {
+                        -- Floats
                         FloatTitle = { link = "TelescopeResultsTitle" },
                         NormalFloat = { link = "TelescopeResultsNormal" },
                         FloatBorder = { link = "TelescopeResultsBorder" },
+
+                        -- Statusline
+                        StatusLineHighlightInsert = { bg = colors.red, fg = colors.base },
+                        StatusLineHighlightNormal = { bg = colors.green, fg = colors.mantle },
+                        StatusLineHighlightVisual = { bg = colors.mauve, fg = colors.mantle },
                     }
                 end,
             })
