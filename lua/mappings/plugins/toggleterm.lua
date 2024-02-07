@@ -1,6 +1,7 @@
 -- Terminal
 local Terminal     = require('toggleterm.terminal').Terminal
-local zsh_terminal = Terminal:new({ cmd = "ZDOTDIR=" .. vim.fn.stdpath('config') .. "/stuff zsh", close_on_exit = false })
+local zsh_terminal = Terminal:new({ cmd = "env ZDOTDIR=" .. vim.fn.stdpath('config') .. "/stuff zsh", env = vim.fn
+.environ(), close_on_exit = false })
 
 function ZshToggleTerm() zsh_terminal:toggle() end
 
