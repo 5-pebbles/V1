@@ -1,7 +1,11 @@
 # .zshrc
 EDITOR=nvim
 
-PROMPT='%1{🌸%}[%(!.%F{red}.%F{green)%~%f]%(!.#.$) '
+if [[ "$TERM" == "foot" ]]; then
+    PROMPT='🌸[%(!.%F{red}.%F{green)%~%f]%(!.#.$) '
+else
+    PROMPT='%1{🌸%}[%(!.%F{red}.%F{green)%~%f]%(!.#.$) '
+fi
 
 alias 'l'='ls -A'
 alias 'c'='cd'
