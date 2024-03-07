@@ -5,6 +5,7 @@ V1 is a extensible neovim configuration, designed for a smooth development exper
 ## Features
 
 - Integrated Terminal with a custom zshrc separate from the hosts system.
+- Extendable Theme Selector.
 
 ## Plugins
 
