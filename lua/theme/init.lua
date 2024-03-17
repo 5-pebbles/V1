@@ -15,7 +15,7 @@ local M = {
     },
     -- Headlines
     {
-        "5-pebbles/headlines.nvim",
+        "lukas-reineke/headlines.nvim",
         dependencies = "nvim-treesitter/nvim-treesitter",
         opts = {
             markdown = {

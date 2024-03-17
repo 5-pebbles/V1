@@ -5,3 +5,4 @@ config
 zshrc
 dir
 hyprland
+rusqlite
