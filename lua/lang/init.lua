@@ -175,6 +175,8 @@ activate(require("lang.lua"))
 activate(require("lang.rust"))
 -- Docker
 activate(require("lang.docker"))
+-- Python
+activate(require("lang.python"))
 
 -- Treesitter
 table.insert(M, {

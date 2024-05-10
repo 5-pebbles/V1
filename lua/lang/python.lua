@@ -1,20 +1,20 @@
 local M = {}
 
--- You can find headline in the theme plugins
+M.treesitters = { "python" }
 
-M.treesitters = { "markdown_inline" }
+M.formatters = { "black" }
 
 vim.api.nvim_create_autocmd({"BufRead", "BufNewFile"}, {
-    pattern = "*.md",
+    pattern = "*.py",
     once = true,
     callback = function()
-        require("lang.utils").ensure_installed("marksman", function()
+        require("lang.utils").ensure_installed("pyright", function()
             local lspconfig = require("lspconfig")
             local lsp_capabilities = require("cmp_nvim_lsp").default_capabilities()
 
-            lspconfig.marksman.setup({
+            lspconfig.pyright.setup({
                 capabilities = lsp_capabilities,
-                filetypes = { "markdown" },
+                filetypes = { "python" },
             })
         end, 100000)
     end,
