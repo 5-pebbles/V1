@@ -28,7 +28,7 @@ function M.ensure_installed(server_name, callback, timeout)
     local iterations = math.ceil(timeout / 500)
 
     local function poll_server_install()
-        if iterations <= 0  then -- Stop polling after timeout
+        if iterations <= 0 then  -- Stop polling after timeout
             print("Timeout exceeded. Server installation failed.")
             return
         end
