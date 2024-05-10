@@ -2,9 +2,9 @@ local M = {}
 
 M.treesitters = { "lua" }
 
-M.formatters = { "stylua" }
+M.formatters = { lua = { "luaformatter" } }
 
-vim.api.nvim_create_autocmd({"BufRead", "BufNewFile"}, {
+vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
     pattern = "*.lua",
     once = true,
     callback = function()

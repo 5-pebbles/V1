@@ -4,7 +4,7 @@ local M = {}
 
 M.treesitters = { "markdown_inline" }
 
-vim.api.nvim_create_autocmd({"BufRead", "BufNewFile"}, {
+vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
     pattern = "*.md",
     once = true,
     callback = function()

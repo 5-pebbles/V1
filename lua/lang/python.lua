@@ -2,9 +2,9 @@ local M = {}
 
 M.treesitters = { "python" }
 
-M.formatters = { "black" }
+M.formatters = { python = { "black" } }
 
-vim.api.nvim_create_autocmd({"BufRead", "BufNewFile"}, {
+vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
     pattern = "*.py",
     once = true,
     callback = function()

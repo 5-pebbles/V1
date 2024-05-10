@@ -218,6 +218,10 @@ table.insert(M, {
     config = function()
         require("conform").setup({
             formatters_by_ft = F,
+            format_on_save = {
+                lsp_fallback = true,
+                timeout_ms = 500,
+            },
         })
     end,
 })

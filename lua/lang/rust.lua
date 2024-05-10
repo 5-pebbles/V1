@@ -2,9 +2,9 @@ local M = {}
 
 M.treesitters = { "rust" }
 
-M.formatters = { "rustfmt" }
+M.formatters = { rust = { "rustfmt" } }
 
-vim.api.nvim_create_autocmd({"BufRead", "BufNewFile"}, {
+vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
     pattern = "*.rs",
     once = true,
     callback = function()
